@@ -1,0 +1,23 @@
+name: Update Submodules
+
+on:
+  workflow_dispatch: # 允许你在网页上手动点击运行
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: true
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update Submodules
+        run: |
+          git submodule update --remote --recursive
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "chore: update submodules to latest" || exit 0
+          git push
