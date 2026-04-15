@@ -50,6 +50,7 @@ mkdir -p "$FW_DIR"
 # 下载 1.6 版本的核心固件、board-2.bin 和 regdb.bin
 # 使用 -sL 参数让下载过程在日志中更简洁
 curl -sL "https://git.codelinaro.org/clo/ath-firmware/ath12k-firmware/-/raw/main/QCN9274/hw2.0/1.6/WLAN.WBE.1.6-01243-QCAHKSWPL_SILICONZ-1/firmware-2.bin" -o "$FW_DIR/firmware-2.bin"
+curl -sL "https://git.codelinaro.org/clo/ath-firmware/ath12k-firmware/-/raw/main/QCN9274/hw2.0/1.6/WLAN.WBE.1.6-01243-QCAHKSWPL_SILICONZ-1/Notice.txt" -o "$FW_DIR/Notice.txt"
 curl -sL "https://git.codelinaro.org/clo/ath-firmware/ath12k-firmware/-/raw/main/QCN9274/hw2.0/board-2.bin" -o "$FW_DIR/board-2.bin"
 curl -sL "https://git.codelinaro.org/clo/ath-firmware/ath12k-firmware/-/raw/main/QCN9274/hw2.0/regdb.bin" -o "$FW_DIR/regdb.bin"
 
